@@ -9,7 +9,7 @@ python3 -u run.py \
   --is_training 1 \
   --task_name long_term_forecast \
   --root_path ./data/ \
-  --data_path thesis_data.csv \
+  --data_path forecast_data.csv \
   --model_id EPF_168_24 \
   --model $model_name \
   --data custom \
