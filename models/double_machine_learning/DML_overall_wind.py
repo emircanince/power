@@ -6,7 +6,7 @@ from scipy.ndimage import gaussian_filter1d
 from DML_utils_wind import residualize_data, fit_residualized_model
 
 # Load data
-df = pd.read_csv('/Users/emircanince/Desktop/power/renewables/data/causal_data.csv')
+df = pd.read_csv('/Users/emircanince/Desktop/power/data/causal_data.csv')
 df['Date'] = pd.to_datetime(df['Date'])
 df.set_index('Date', inplace=True)
 
@@ -55,8 +55,8 @@ for start in range(0, len(df) - window_size + 1, step_size):
 results_df = pd.DataFrame(results)
 
 # Save raw results
-results_df.to_csv('/Users/emircanince/Desktop/power/renewables/png/results_wind.csv', index=False)
-results_dataset = pd.read_csv('/Users/emircanince/Desktop/power/renewables/png/results_wind.csv')
+results_df.to_csv('/Users/emircanince/Desktop/power/data/results_wind.csv', index=False)
+results_dataset = pd.read_csv('/Users/emircanince/Desktop/power/data/results_wind.csv')
 
 # Group by mean solar penetration and calculate mean and quantiles for CATE
 mean_cate_df = results_dataset.groupby('mean_wind_penetration')['cate'].agg(['mean']).reset_index()

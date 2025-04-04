@@ -7,7 +7,7 @@ from scipy.ndimage import gaussian_filter1d
 
 
 # Load dataset
-df = pd.read_csv('/Users/emircanince/Desktop/power/renewables/data/causal_data.csv')
+df = pd.read_csv('/Users/emircanince/Desktop/power/data/causal_data.csv')
 df['Date'] = pd.to_datetime(df['Date'])
 df.set_index('Date', inplace=True)
 
@@ -55,7 +55,7 @@ for i in range(0, len(df) - window_size + 1, step_size):
     ci_upper.append(price_ci_high)
 
 # Load solar results
-results_dataset_solar = pd.read_csv('/Users/emircanince/Desktop/power/renewables/png/results_solar.csv')
+results_dataset_solar = pd.read_csv('/Users/emircanince/Desktop/power/data/results_solar.csv')
 
 # Group by mean solar penetration and calculate mean and quantiles for CATE
 mean_cate_df_solar = results_dataset_solar.groupby('mean_solar_penetration')['cate'].agg(['mean']).reset_index()
@@ -100,4 +100,3 @@ plt.tight_layout()
 # Save the plot
 # plt.savefig('/Users/emircanince/Desktop/power/renewables/png/mean_vs_cate_solar.png', format='png', dpi=600)
 plt.show()
-
