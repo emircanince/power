@@ -106,17 +106,27 @@ def quantile_loss(predictions, targets, quantiles, weights):
     return weighted_losses.mean()
 
 
-# Ensure MPS is available
+# # Ensure MPS is available
+# if torch.backends.mps.is_available():
+#     print("MPS device is available.")
+#     mps_device = torch.device("mps")
+# else:
+#     print("MPS device not available.")
+#     # Consider exiting or falling back to CPU processing
+#     exit()
+
 if torch.backends.mps.is_available():
+    device = torch.device("mps")
     print("MPS device is available.")
-    mps_device = torch.device("mps")
+elif torch.cuda.is_available():
+    device = torch.device("cuda")
+    print("CUDA device is available. Using CUDA.")
 else:
-    print("MPS device not available.")
-    # Consider exiting or falling back to CPU processing
-    exit()
+    device = torch.device("cpu")
+    print("No GPU device available, falling back to CPU.")
 
 # Data setup
-df = pd.read_csv('/Users/emircanince/Desktop/power/data/causal_data.csv')
+df = pd.read_csv('data/causal_data.csv')
 df['Date'] = pd.to_datetime(df['Date'])
 df.set_index('Date', inplace=True)
 covariates = ['wind_penetration']
@@ -134,8 +144,8 @@ fitting_points = torch.linspace(-1, 1, n_fitting_points).reshape(-1, 1)
 quantiles = torch.tensor([0.1, 0.9])
 
 # MEAN PREDICTION
-coefficients = torch.zeros(len(fitting_points), X_poly_base.size(1), dtype=torch.float32, device=mps_device)
-predicted_values = torch.zeros(len(fitting_points), dtype=torch.float32, device=mps_device)
+coefficients = torch.zeros(len(fitting_points), X_poly_base.size(1), dtype=torch.float32, device=device)
+predicted_values = torch.zeros(len(fitting_points), dtype=torch.float32, device=device)
 
 for i, fp in enumerate(tqdm(fitting_points, desc="Fitting points (mean)")):
     bandwidth = adaptive_bandwidth(features, fp, percentile=30)

@@ -6,7 +6,8 @@ from scipy.ndimage import gaussian_filter1d
 from DML_utils_wind import residualize_data, fit_residualized_model
 
 # Load data
-df = pd.read_csv('/Users/emircanince/Desktop/power/data/causal_data.csv')
+# df = pd.read_csv('/Users/emircanince/Desktop/power/data/causal_data.csv')
+df = pd.read_csv('data/causal_data.csv')
 df['Date'] = pd.to_datetime(df['Date'])
 df.set_index('Date', inplace=True)
 
