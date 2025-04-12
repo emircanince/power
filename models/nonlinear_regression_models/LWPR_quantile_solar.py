@@ -117,6 +117,7 @@ else:
 
 # Data setup
 df = pd.read_csv('/Users/emircanince/Desktop/power/data/causal_data.csv')
+# df = df[df['solar_penetration'] != 0]
 df.set_index('Date', inplace=True)
 covariates = ['solar_penetration']
 response = 'electricity_price'
