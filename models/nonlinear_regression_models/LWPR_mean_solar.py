@@ -17,7 +17,10 @@ mpl.rcParams.update({
     'savefig.dpi': 300           # High DPI for saving the figure
 })
 
-df = pd.read_csv('/Users/emircanince/Desktop/power/data/causal_data.csv')
+df = pd.read_csv('data/causal_data.csv')
+df = df[df['solar_penetration'] != 0]
+# df = df[df['solar_penetration'] >= 1]
+# df = df[df['Hour'] <= 22]
 
 # Define covariates and response
 covariates = ['solar_penetration', 'Hour']
@@ -65,5 +68,5 @@ ax.set_ylabel('Hour of the day', labelpad=10)
 ax.set_zlabel('Price [EUR/MWh]', labelpad=10)
 # ax.set_zlim(-80, 200)
 plt.tight_layout()
-# plt.savefig(f'/Users/emircanince/Desktop/power/png/LWPR_solar.png',format='png', dpi=600)
+plt.savefig(f'png/LWPR_solar.png',format='png', dpi=600)
 plt.show()

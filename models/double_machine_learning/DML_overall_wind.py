@@ -20,8 +20,8 @@ df['solar_forecast'] = df['solar_forecast'] / 1000
 df = df.sort_values(by='wind_penetration')
 
 # Parameters for sliding window
-window_size = 10000
-step_size = 1000
+window_size = 5000  # 10000
+step_size = 500     # 1000
 n_iterations = 100  # Number of bootstraps
 
 # Store CATE and corresponding penetration levels for each window
@@ -56,8 +56,8 @@ for start in range(0, len(df) - window_size + 1, step_size):
 results_df = pd.DataFrame(results)
 
 # Save raw results
-results_df.to_csv('/Users/emircanince/Desktop/power/data/results_wind.csv', index=False)
-results_dataset = pd.read_csv('/Users/emircanince/Desktop/power/data/results_wind.csv')
+results_df.to_csv('data/results_wind.csv', index=False)
+results_dataset = pd.read_csv('data/results_wind.csv')
 
 # Group by mean solar penetration and calculate mean and quantiles for CATE
 mean_cate_df = results_dataset.groupby('mean_wind_penetration')['cate'].agg(['mean']).reset_index()
@@ -85,8 +85,8 @@ plt.xticks(fontsize=14)
 plt.yticks(fontsize=14)
 plt.legend(fontsize=14)
 plt.tight_layout()
-plt.xlim(-1, 0)
-# plt.savefig('/Users/emircanince/Desktop/power/renewables/png/smooth_cate_wind.png', format='png', dpi=600)
+plt.xlim(-1.1, -0.3)
+plt.savefig('png/smooth_cate_wind.png', format='png', dpi=600)
 plt.show()
 
 plt.figure(figsize=(6, 6), dpi=100)
@@ -100,6 +100,6 @@ plt.xticks(fontsize=14)
 plt.yticks(fontsize=14)
 plt.legend(fontsize=14)
 plt.tight_layout()
-plt.xlim(-1, -0.4)
-# plt.savefig('/Users/emircanince/Desktop/power/renewables/png/individual_cate_wind.png', format='png', dpi=600)
+plt.xlim(-1.1, -0.3)
+plt.savefig('png/individual_cate_wind.png', format='png', dpi=600)
 plt.show()

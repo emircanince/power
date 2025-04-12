@@ -7,7 +7,7 @@ from scipy.ndimage import gaussian_filter1d
 
 
 # Load dataset
-df = pd.read_csv('/Users/emircanince/Desktop/power/data/causal_data.csv')
+df = pd.read_csv('data/causal_data.csv')
 df['Date'] = pd.to_datetime(df['Date'])
 df.set_index('Date', inplace=True)
 
@@ -18,8 +18,8 @@ df = df[['wind_penetration', 'electricity_price']]
 df = df.sort_values('wind_penetration')
 
 # Define window size and step size
-window_size = 10000
-step_size = 1000
+window_size = 5000
+step_size = 500
 
 # Initialize lists to store results
 mean_penetrations = []
@@ -55,7 +55,7 @@ for i in range(0, len(df) - window_size + 1, step_size):
     ci_upper.append(price_ci_high)
 
 # Load solar results
-results_dataset_solar = pd.read_csv('/Users/emircanince/Desktop/power/data/results_wind.csv')
+results_dataset_solar = pd.read_csv('data/results_wind.csv')
 
 # Group by mean solar penetration and calculate mean and quantiles for CATE
 mean_cate_df_wind = results_dataset_solar.groupby('mean_wind_penetration')['cate'].agg(['mean']).reset_index()
@@ -97,5 +97,5 @@ ax2.set_xlabel('Price [EUR/MWh]', color='gray', fontsize=16, labelpad=10)
 ax2.tick_params(axis='x', labelcolor='gray', labelsize=14)
 fig.legend(fontsize=14, ncol=1, bbox_to_anchor=(0.58, 0.365), frameon=True)
 plt.tight_layout()
-# plt.savefig('/Users/emircanince/Desktop/power/renewables/png/mean_vs_cate_wind.png', format='png', dpi=600)
+plt.savefig('png/mean_vs_cate_wind.png', format='png', dpi=600)
 plt.show()

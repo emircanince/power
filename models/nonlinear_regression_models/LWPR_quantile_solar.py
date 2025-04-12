@@ -6,7 +6,7 @@ from matplotlib.colors import Normalize
 import matplotlib.cm as cm
 from tqdm import tqdm
 import matplotlib.colors as mcolors
-from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from matplotlib.collections import LineCollection
 import matplotlib as mpl
 
@@ -116,12 +116,15 @@ else:
     exit()
 
 # Data setup
-df = pd.read_csv('/Users/emircanince/Desktop/power/data/causal_data.csv')
+df = pd.read_csv('data/causal_data.csv')
 # df = df[df['solar_penetration'] != 0]
+df = df[df['solar_penetration'] >= 1]
+df['Date'] = pd.to_datetime(df['Date'])
 df.set_index('Date', inplace=True)
 covariates = ['solar_penetration']
 response = 'electricity_price'
 scaler = MinMaxScaler(feature_range=(-1, 1))
+# scaler = StandardScaler()
 df[covariates] = scaler.fit_transform(df[covariates])
 features = torch.tensor(df[covariates].values, dtype=torch.float32)
 target = torch.tensor(df[response].values, dtype=torch.float32)
@@ -130,6 +133,7 @@ X_poly_base = polynomial_features(features)
 
 n_fitting_points = 100
 fitting_points = torch.linspace(-1, 1, n_fitting_points).reshape(-1, 1)
+# fitting_points = torch.linspace(features.min(), features.max(), n_fitting_points).reshape(-1, 1)
 # quantiles = torch.tensor([0.1, 0.9])
 quantiles = torch.tensor([0.1, 0.9])
 
@@ -248,7 +252,8 @@ plt.grid(axis='y', linestyle='--', alpha=0.2)
 ax.set_xlabel('Forecasted penetration [%]', fontsize=18, labelpad=10)
 ax.set_ylabel('Price [EUR/MWh]', fontsize=18, labelpad=10)
 
+# plt.xlim(0, 40)
 # plt.legend([line_mean, line_lower, line_upper], ['Mean prediction', '10% quantile', '90% quantile'], loc='upper right', fontsize=14)
 plt.tight_layout()
-# plt.savefig(f'/Users/emircanince/Desktop/power/png/quantile_solar.png', format='png', dpi=600)
+plt.savefig(f'png/quantile_solar.png', format='png', dpi=600)
 plt.show()

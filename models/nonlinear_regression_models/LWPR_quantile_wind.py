@@ -260,5 +260,5 @@ ax.set_ylabel('Price [EUR/MWh]', fontsize=18, labelpad=10)
 
 # plt.legend([line_mean, line_lower, line_upper], ['Mean prediction', '10% quantile', '90% quantile'], loc='upper right', fontsize=14)
 plt.tight_layout()
-# plt.savefig(f'/Users/emircanince/Desktop/power/png/quantile_wind.png', format='png', dpi=600)
+plt.savefig(f'png/quantile_wind.png', format='png', dpi=600)
 plt.show()
