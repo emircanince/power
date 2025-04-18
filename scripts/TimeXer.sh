@@ -9,11 +9,12 @@ python3 -u run.py \
   --is_training 1 \
   --task_name long_term_forecast \
   --root_path ./data/ \
-  --data_path forecast_data.csv \
+  --data_path causal_data.csv \
   --model_id EPF_168_24 \
   --model $model_name \
   --data custom \
   --features MS \
+  --predictor wind_forecast,total_load \
   --seq_len 168 \
   --pred_len 24 \
   --e_layers 3 \

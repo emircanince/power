@@ -1,4 +1,4 @@
-Date,solar_forecast,wind_off_forecast,wind_on_forecast,total_load,solar_capacity,wind_off_capacity,wind_on_capacity,electricity_price,daylight_hours,co2_price,gas_price,wind_forecast,wind_capacity,solar_penetration,wind_penetration,solar_binary,Hour,Day,Month,Year
+date,solar_forecast,wind_off_forecast,wind_on_forecast,total_load,solar_capacity,wind_off_capacity,wind_on_capacity,electricity_price,daylight_hours,co2_price,gas_price,wind_forecast,wind_capacity,solar_penetration,wind_penetration,solar_binary,Hour,Day,Month,Year
 2022-01-01 00:00:00,0.0,23711.96,102410.79,169240.83,67479,8149,58014,50.05,8.04,74.57,72.752,126122.75,66163,0.0,74.52,0,0,1,1,2022
 2022-01-01 01:00:00,0.0,23338.32,98510.9,161676.38,67479,8149,58014,41.33,8.04,74.57,72.752,121849.22,66163,0.0,75.37,0,1,1,1,2022
 2022-01-01 02:00:00,0.0,22318.58,93902.99,156383.46,67479,8149,58014,43.22,8.04,74.57,72.752,116221.57,66163,0.0,74.32,0,2,1,1,2022

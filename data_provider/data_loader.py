@@ -206,8 +206,8 @@ warnings.filterwarnings('ignore')
 
 class Dataset_Custom(Dataset):
     def __init__(self, args, root_path, flag='train', size=None,
-                 features='S', data_path='ETTh1.csv',
-                 target='OT', scale=True, timeenc=0, freq='h', seasonal_patterns=None):
+                 features='MS', data_path='causal_data.csv',
+                 target='electricity_price', scale=True, timeenc=0, freq='h', seasonal_patterns=None):
         # size [seq_len, label_len, pred_len]
         self.args = args
         # info
@@ -242,9 +242,18 @@ class Dataset_Custom(Dataset):
         '''
         df_raw.columns: ['date', ...(other features), target feature]
         '''
-        cols = list(df_raw.columns)
-        cols.remove(self.target)
-        cols.remove('date')
+        # cols = list(df_raw.columns)
+        # cols.remove(self.target)
+        # cols.remove('date')
+
+        requested = set(
+            [c.strip() for c in getattr(self.args, "predictor", "").split(",") if c.strip()]
+        )                                # empty set → keep everything
+        all_feats = [c for c in df_raw.columns if c not in {self.target, "date"}]
+        cols = (
+            [c for c in all_feats if c in requested] if requested else all_feats
+        )
+
         df_raw = df_raw[['date'] + cols + [self.target]]
         num_train = int(len(df_raw) * 0.7)
         num_test = int(len(df_raw) * 0.2)
