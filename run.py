@@ -30,14 +30,13 @@ if __name__ == '__main__':
     parser.add_argument('--data', type=str, required=True, default='causal_data', help='dataset type')
     parser.add_argument('--root_path', type=str, default='./data/', help='root path of the data file')
     parser.add_argument('--data_path', type=str, default='causal_data.csv', help='data file')
-    parser.add_argument('--features', type=str, default='M',
+    parser.add_argument('--features', type=str, default='MS',
                         help='forecasting task, options:[M, S, MS]; M:multivariate predict multivariate, S:univariate predict univariate, MS:multivariate predict univariate')
     parser.add_argument('--target', type=str, default='electricity_price', help='target feature in S or MS task')
     parser.add_argument('--freq', type=str, default='h',
                         help='freq for time features encoding, options:[s:secondly, t:minutely, h:hourly, d:daily, b:business days, w:weekly, m:monthly], you can also use more detailed freq like 15min or 3h')
     parser.add_argument('--checkpoints', type=str, default='./checkpoints/', help='location of model checkpoints')
-    
-    parser.add_argument('--predictor', type=str, default='wind_forecast, total_load',
+    parser.add_argument('--predictor', type=str, default='wind_forecast,total_load',
                         help="Comma‑separated list of predictor columns to keep "
                         "(e.g. 'solar_forecast, wind_forecast, total_load'). "
                         "Leave empty to keep all non‑target, non‑date columns.")

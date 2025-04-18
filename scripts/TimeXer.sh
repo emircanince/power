@@ -13,8 +13,8 @@ python3 -u run.py \
   --model_id EPF_168_24 \
   --model $model_name \
   --data custom \
-  --features MS \
-  --predictor wind_forecast,total_load \
+  --features M \
+  --predictor solar_forecast,total_load \
   --seq_len 168 \
   --pred_len 24 \
   --e_layers 3 \
@@ -26,4 +26,5 @@ python3 -u run.py \
   --d_model 512 \
   --d_ff 512 \
   --batch_size 4 \
-  --itr 1
+  --itr 1 \
+  "$@"      
