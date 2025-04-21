@@ -14,7 +14,7 @@ python3 -u run.py \
   --model $model_name \
   --data custom \
   --features M \
-  --predictor solar_forecast,total_load \
+  --predictor total_load \
   --seq_len 168 \
   --pred_len 24 \
   --e_layers 3 \
