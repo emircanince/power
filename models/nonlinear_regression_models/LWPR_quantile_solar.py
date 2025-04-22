@@ -119,8 +119,9 @@ else:
 df = pd.read_csv('data/causal_data.csv')
 # df = df[df['solar_penetration'] != 0]
 df = df[df['solar_penetration'] >= 1]
-df['Date'] = pd.to_datetime(df['Date'])
-df.set_index('Date', inplace=True)
+df = df[df['solar_penetration'] <= 80]
+df['date'] = pd.to_datetime(df['date'])
+df.set_index('date', inplace=True)
 covariates = ['solar_penetration']
 response = 'electricity_price'
 scaler = MinMaxScaler(feature_range=(-1, 1))

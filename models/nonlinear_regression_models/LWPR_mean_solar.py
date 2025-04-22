@@ -19,7 +19,7 @@ mpl.rcParams.update({
 
 df = pd.read_csv('data/causal_data.csv')
 df = df[df['solar_penetration'] != 0]
-# df = df[df['solar_penetration'] >= 1]
+df = df[df['solar_penetration'] < 60]
 # df = df[df['Hour'] <= 22]
 
 # Define covariates and response

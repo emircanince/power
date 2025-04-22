@@ -8,8 +8,8 @@ from DML_utils_solar import residualize_data, fit_residualized_model
 # Load data
 df = pd.read_csv('data/causal_data.csv')
 df = df[df['solar_penetration'] != 0]
-df['Date'] = pd.to_datetime(df['Date'])
-df.set_index('Date', inplace=True)
+df['date'] = pd.to_datetime(df['date'])
+df.set_index('date', inplace=True)
 
 # Scale the relevant columns
 df['total_load'] = df['total_load'] / 1000
