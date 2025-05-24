@@ -14,12 +14,12 @@ python3 -u run.py \
   --model $model_name \
   --data custom \
   --features M \
-  --predictor total_load \
+  --predictor solar_forecast,wind_forecast,total_load \
   --seq_len 168 \
   --pred_len 24 \
   --e_layers 3 \
-  --enc_in 3 \
-  --dec_in 3 \
+  --enc_in 4 \
+  --dec_in 4 \
   --c_out 1 \
   --des $des \
   --patch_len $patch_len \
