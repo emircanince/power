@@ -13,7 +13,7 @@ python3 -u run.py \
   --model_id EPF_168_24 \
   --model $model_name \
   --data custom \
-  --features M \
+  --features MS \
   --predictor solar_forecast,wind_forecast,total_load \
   --seq_len 168 \
   --pred_len 24 \

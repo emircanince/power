@@ -36,7 +36,7 @@ if __name__ == '__main__':
     parser.add_argument('--freq', type=str, default='h',
                         help='freq for time features encoding, options:[s:secondly, t:minutely, h:hourly, d:daily, b:business days, w:weekly, m:monthly], you can also use more detailed freq like 15min or 3h')
     parser.add_argument('--checkpoints', type=str, default='./checkpoints/', help='location of model checkpoints')
-    parser.add_argument('--predictor', type=str, default='wind_forecast,total_load',
+    parser.add_argument('--predictor', type=str, default='solar_forecast,wind_forecast,total_load',
                         help="Comma‑separated list of predictor columns to keep "
                         "(e.g. 'solar_forecast, wind_forecast, total_load'). "
                         "Leave empty to keep all non‑target, non‑date columns.")

@@ -3,7 +3,7 @@ import torch
 # from models import Autoformer, Transformer, TimesNet, Nonstationary_Transformer, DLinear, FEDformer, \
 #    Informer, LightTS, Reformer, ETSformer, Pyraformer, PatchTST, MICN, Crossformer, FiLM, iTransformer, \
 #    Koopa, TiDE, FreTS, TimeMixer, TSMixer, SegRNN, MambaSimple, TemporalFusionTransformer, SCINet, TimeXer
-from models import TimeXer, iTransformer, Autoformer, Transformer, DLinear, PatchTST, LSTM
+from models import TimeXer, iTransformer, Autoformer, Transformer, DLinear, PatchTST, SCINet
 
 class Exp_Basic(object):
     def __init__(self, args):
@@ -11,7 +11,7 @@ class Exp_Basic(object):
         self.model_dict = {
             # 'TimesNet': TimesNet,
             'Autoformer': Autoformer,
-            'LSTM': LSTM,
+            # 'LSTM': LSTM,
             'Transformer': Transformer,
             # 'Nonstationary_Transformer': Nonstationary_Transformer,
             'DLinear': DLinear,
@@ -34,7 +34,7 @@ class Exp_Basic(object):
             # 'TSMixer': TSMixer,
             # 'SegRNN': SegRNN,
             # 'TemporalFusionTransformer': TemporalFusionTransformer,
-            # "SCINet": SCINet,
+            "SCINet": SCINet,
             'TimeXer': TimeXer
         }
         if args.model == 'Mamba':
