@@ -17,7 +17,8 @@ mpl.rcParams.update({
     'savefig.dpi': 300           # High DPI for saving the figure
 })
 
-df = pd.read_csv('data/causal_data.csv')
+df = pd.read_csv('data/thesis_data.csv')
+df = df[df['wind_penetration'] < 100] # outlier check
 
 # Define covariates and response
 covariates = ['wind_penetration', 'Hour']

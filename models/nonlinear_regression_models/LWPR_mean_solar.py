@@ -17,10 +17,9 @@ mpl.rcParams.update({
     'savefig.dpi': 300           # High DPI for saving the figure
 })
 
-df = pd.read_csv('data/causal_data.csv')
-df = df[df['solar_penetration'] != 0]
-df = df[df['solar_penetration'] < 60]
-# df = df[df['Hour'] <= 22]
+df = pd.read_csv('data/thesis_data.csv')
+df = df[df['solar_penetration'] != 0] # filtering for daytime
+#df = df[df['solar_penetration'] < 60] # check
 
 # Define covariates and response
 covariates = ['solar_penetration', 'Hour']
@@ -55,6 +54,8 @@ cmap_solar = 'magma'
 fig = plt.figure(figsize=(8, 8), dpi=100)
 ax = fig.add_subplot(111, projection='3d')
 surface = ax.plot_surface(original_grid_x, original_grid_y, grid_z, cmap=cmap_solar, edgecolor='k', linewidth=.5)
+ax.set_yticks(np.arange(0, 22, 4))
+ax.set_yticklabels([str(int(t)) for t in np.arange(0, 22, 4)])
 contours = ax.contourf(original_grid_x, original_grid_y, grid_z, zdir='z', offset=np.min(grid_z), cmap=cmap_solar, alpha=0.7)
 contours = ax.contourf(original_grid_x, original_grid_y, grid_z, zdir='x', offset=np.min(original_grid_x), cmap=cmap_solar, alpha=0.7)
 contours = ax.contourf(original_grid_x, original_grid_y, grid_z, zdir='y', offset=np.max(original_grid_y), cmap=cmap_solar, alpha=0.7)

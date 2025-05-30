@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 
 # Function to generate polynomial features up to a given order for two-dimensional input
-def polynomial_features(x, order=1):
+def polynomial_features(x, order=2):
     n = x.size(0)
     features = [torch.ones(n)]
     for i in range(1, order + 1):

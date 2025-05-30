@@ -6,8 +6,8 @@ python -u run.py \
   --is_training 1 \
   --task_name long_term_forecast \
   --root_path ./data/ \
-  --data_path causal_data.csv \
-  --model_id ECL_168_24 \
+  --data_path thesis_data.csv \
+  --model_id SCINet_168_24 \
   --model $model_name \
   --data custom \
   --features MS \

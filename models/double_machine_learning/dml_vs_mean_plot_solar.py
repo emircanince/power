@@ -7,7 +7,7 @@ from scipy.ndimage import gaussian_filter1d
 
 
 # Load dataset
-df = pd.read_csv('data/causal_data.csv')
+df = pd.read_csv('data/thesis_data.csv')
 df = df[df['solar_penetration'] != 0]
 df['Date'] = pd.to_datetime(df['Date'])
 df.set_index('Date', inplace=True)
