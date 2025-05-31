@@ -8,8 +8,8 @@ from DML_utils_wind import residualize_data, fit_residualized_model
 # Load data
 # df = pd.read_csv('/Users/emircanince/Desktop/power/data/causal_data.csv')
 df = pd.read_csv('data/thesis_data.csv')
-df['Date'] = pd.to_datetime(df['Date'])
-df.set_index('Date', inplace=True)
+df['date'] = pd.to_datetime(df['date'])
+df.set_index('date', inplace=True)
 
 # Scale the relevant columns
 df['total_load'] = df['total_load'] / 1000

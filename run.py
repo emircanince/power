@@ -2,10 +2,10 @@ import argparse
 import os
 import torch
 from exp.exp_long_term_forecasting import Exp_Long_Term_Forecast
-from exp.exp_imputation import Exp_Imputation
-from exp.exp_short_term_forecasting import Exp_Short_Term_Forecast
-from exp.exp_anomaly_detection import Exp_Anomaly_Detection
-from exp.exp_classification import Exp_Classification
+# from exp.exp_imputation import Exp_Imputation
+# from exp.exp_short_term_forecasting import Exp_Short_Term_Forecast
+# from exp.exp_anomaly_detection import Exp_Anomaly_Detection
+# from exp.exp_classification import Exp_Classification
 from utils.print_args import print_args
 import random
 import numpy as np
@@ -19,17 +19,16 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='TimesNet')
 
     # basic config
-    parser.add_argument('--task_name', type=str, required=True, default='long_term_forecast',
-                        help='task name, options:[long_term_forecast, short_term_forecast, imputation, classification, anomaly_detection]')
+    parser.add_argument('--task_name', type=str, required=True, default='long_term_forecast', help='task name')
     parser.add_argument('--is_training', type=int, required=True, default=1, help='status')
     parser.add_argument('--model_id', type=str, required=True, default='test', help='model id')
     parser.add_argument('--model', type=str, required=True, default='Autoformer',
-                        help='model name, options: [Autoformer, Transformer, TimesNet]')
+                        help='model name, options: [Autoformer, iTransformer]')
 
     # data loader
-    parser.add_argument('--data', type=str, required=True, default='causal_data', help='dataset type')
+    parser.add_argument('--data', type=str, required=True, default='thesis_data', help='dataset type')
     parser.add_argument('--root_path', type=str, default='./data/', help='root path of the data file')
-    parser.add_argument('--data_path', type=str, default='causal_data.csv', help='data file')
+    parser.add_argument('--data_path', type=str, default='thesis_data.csv', help='data file')
     parser.add_argument('--features', type=str, default='MS',
                         help='forecasting task, options:[M, S, MS]; M:multivariate predict multivariate, S:univariate predict univariate, MS:multivariate predict univariate')
     parser.add_argument('--target', type=str, default='electricity_price', help='target feature in S or MS task')
@@ -48,11 +47,11 @@ if __name__ == '__main__':
     parser.add_argument('--seasonal_patterns', type=str, default='Monthly', help='subset for M4')
     parser.add_argument('--inverse', action='store_true', help='inverse output data', default=False)
 
-    # inputation task
-    parser.add_argument('--mask_rate', type=float, default=0.25, help='mask ratio')
+    # # inputation task
+    # parser.add_argument('--mask_rate', type=float, default=0.25, help='mask ratio')
 
-    # anomaly detection task
-    parser.add_argument('--anomaly_ratio', type=float, default=0.25, help='prior anomaly ratio (%)')
+    # # anomaly detection task
+    # parser.add_argument('--anomaly_ratio', type=float, default=0.25, help='prior anomaly ratio (%)')
 
     # model define
     parser.add_argument('--expand', type=int, default=2, help='expansion factor for Mamba')
@@ -160,16 +159,16 @@ if __name__ == '__main__':
 
     if args.task_name == 'long_term_forecast':
         Exp = Exp_Long_Term_Forecast
-    elif args.task_name == 'short_term_forecast':
-        Exp = Exp_Short_Term_Forecast
-    elif args.task_name == 'imputation':
-        Exp = Exp_Imputation
-    elif args.task_name == 'anomaly_detection':
-        Exp = Exp_Anomaly_Detection
-    elif args.task_name == 'classification':
-        Exp = Exp_Classification
-    else:
-        Exp = Exp_Long_Term_Forecast
+    # elif args.task_name == 'short_term_forecast':
+    #     Exp = Exp_Short_Term_Forecast
+    # elif args.task_name == 'imputation':
+    #     Exp = Exp_Imputation
+    # elif args.task_name == 'anomaly_detection':
+    #     Exp = Exp_Anomaly_Detection
+    # elif args.task_name == 'classification':
+    #     Exp = Exp_Classification
+    # else:
+    #     Exp = Exp_Long_Term_Forecast
 
     if args.is_training:
         for ii in range(args.itr):
