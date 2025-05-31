@@ -4,8 +4,8 @@ Causal Analysis of Renewable Energy Penetration and Electricity Price Forecastin
 ### LWPR Results
 
 <div align="center">
-  <img src="png/LWPR_solar.png" alt="Solar LWPR" width="50%"/>
-  <img src="png/LWPR_wind.png" alt="Wind LWPR" width="50%"/>
+  <img src="png/LWPR_solar.png" alt="Solar LWPR" width="48%"/>
+  <img src="png/LWPR_wind.png" alt="Wind LWPR" width="48%"/>
 </div>
 
 ### CATE Estimates
