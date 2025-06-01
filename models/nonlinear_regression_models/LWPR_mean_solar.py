@@ -19,7 +19,7 @@ mpl.rcParams.update({
 
 df = pd.read_csv('data/thesis_data.csv')
 df = df[df['solar_penetration'] != 0] # filtering for daytime
-#df = df[df['solar_penetration'] < 60] # check
+# df = df[df['solar_penetration'] < 60] # check
 
 # Define covariates and response
 covariates = ['solar_penetration', 'Hour']
