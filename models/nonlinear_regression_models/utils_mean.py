@@ -110,7 +110,7 @@ def plot_results(n_grid_points, fitting_points, predicted_values, scaler, filena
     ax.zaxis.pane.fill = False
     ax.set_xlabel('Forecasted WP penetration (%)')
     ax.set_ylabel('Hour of the day')
-    ax.set_zlabel('Price (GBP/MWh)')
+    ax.set_zlabel('Price (EUR/MWh)')
     ax.set_zlim(-80, 250)
     plt.tight_layout()
     fig.subplots_adjust(left=0.05, right=0.95, bottom=0.05, top=0.85)
