@@ -18,7 +18,7 @@ This section quantifies the short-run price effects of renewable generation in t
 
 | Solar Penetration | Wind Penetration |
 |-------------------|------------------|
-| <img src="figures/solar_2.png" width="95%"/> | <img src="figures/wind_2.png" width="95%"/> |
+| <img src="png/solar_2.png" width="95%"/> | <img src="png/wind_2.png" width="95%"/> |
 
 - **Solar**: Steep price drops up to ~25%; strongest around noon (e.g. −3.1 €/MWh at 15%, 12:00). Effect weakens beyond 30%.
 - **Wind**: Consistent decline up to ~60% share. Smoother and persistent impact across 24h, especially overnight.
@@ -29,7 +29,7 @@ This section quantifies the short-run price effects of renewable generation in t
 
 | Solar | Wind |
 |-------|------|
-| <img src="figures/mean_vs_cate_solar.png" width="95%"/> | <img src="figures/mean_vs_cate_wind.png" width="95%"/> |
+| <img src="png/mean_vs_cate_solar.png" width="95%"/> | <img src="png/mean_vs_cate_wind.png" width="95%"/> |
 
 - **Solar CATE**: Strong at low shares (−0.95 €/MWh at 5%). Weakens but remains negative beyond 30%.
 - **Wind CATE**: Stable impact (−0.8 €/MWh up to 10%, −0.75 €/MWh around 30%). Persists up to 60%.
