@@ -15,17 +15,40 @@
 | Price forecasting | DLinear    | 0.263 | 0.186 | 168 h |
 | Causal impact     | Wind ↗ 1 pp| −0.8 €/MWh | — | up to 10 % penetration |
 
-<details>
-<summary>Visual snippets (click to expand)</summary>
+## Visual appendix
 
-<div align="center">
-  <img src="png/LWPR_solar.png" alt="Solar LWPR surface" width="45%"/>
-  <img src="png/LWPR_wind.png"  alt="Wind LWPR surface"  width="45%"/>
-  <br/>
-  <img src="png/mean_vs_cate_solar.png" alt="Solar CATE vs mean" width="45%"/>
-  <img src="png/mean_vs_cate_wind.png"  alt="Wind CATE vs mean"  width="45%"/>
-</div>
-</details>
+### 1. Merit-order (LWPR) surfaces
+
+| Solar penetration surface | Wind penetration surface |
+|---------------------------|--------------------------|
+| <img src="png/solar_2.png" alt="LWPR surface showing how the electricity price varies with solar-generation penetration and hour of day" width="95%"/> | <img src="png/wind_2.png" alt="LWPR surface showing how the electricity price varies with wind-generation penetration and hour of day" width="95%"/> |
+
+**How to read the plots**
+
+* **Axes** – *Forecasted penetration [%]* on the x-axis, *Hour of the day* on the y-axis, and price in €/MWh on the z-axis.  
+* **Colour bar** – warmer colours signal higher prices; cooler colours indicate lower prices.  
+* **Take-aways**  
+  * **Solar (left):** Prices dip sharply during midday as solar share rises, but recover in the evening when solar output fades.  
+  * **Wind (right):** Wind exerts a steadier, almost linear downward pressure across all hours; the slope flattens at very high penetrations (> 60 %).  
+
+---
+
+### 2. Dose-response (CATE vs. observational mean)
+
+| Solar: CATE vs mean | Wind: CATE vs mean |
+|---------------------|--------------------|
+| <img src="png/mean_vs_cate_solar.png" alt="Solar CATE (orange) compared to observational mean (grey) with 95 % confidence ribbons" width="95%"/> | <img src="png/mean_vs_cate_wind.png" alt="Wind CATE (blue) compared to observational mean (grey) with 95 % confidence ribbons" width="95%"/> |
+
+**How to read the plots**
+
+* **X-axis** – Causal estimate (CATE) in €/MWh; negative values imply cheaper electricity.  
+* **Y-axis** – Forecasted penetration share in %.  
+* **Lines & ribbons** – Solid line = causal estimate with its 95 % bootstrap band; dashed line = raw observational mean.
+
+**Insights**
+
+* **Solar:** The causal estimate (orange) is more negative than the observational mean up to ~15 % penetration, signalling a stronger price-depressing effect after adjusting for confounders; beyond that, the impact attenuates.  
+* **Wind:** The causal estimate (blue) stays consistently below the mean—an indication that failing to correct for simultaneity biases *understates* wind’s price-lowering power, particularly between 20–50 % penetration.
 
 ---
 
