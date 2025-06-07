@@ -12,18 +12,24 @@ This section quantifies the short-run price effects of renewable generation in t
 1. **LWPR** – Smooths observational prices over penetration and hour of day.
 2. **DML (CATE)** – Estimates causal effects with bootstrap-based confidence.
 
----
-
 ### Merit-Order Surfaces (LWPR)
 
 | Solar Penetration | Wind Penetration |
 |-------------------|------------------|
-| <img src="png/solar_2.png" width="95%"/> | <img src="png/wind_2.png" width="95%"/> |
+| <img src="png/solar_2.png" width="98%"/> | <img src="png/wind_2.png" width="90%"/> |
+
+## 🔍 Results Overview
+
+### Locally Weighted Polynomial Regression (LWPR)
+
+<p align="center">
+  <img src="png/solar_2.png" alt="Solar LWPR" width="49%"/>
+  <img src="png/wind_2.png" alt="Wind LWPR" width="45%"/>
+</p>
+
 
 - **Solar**: Steep price drops up to ~25%; strongest around noon (e.g. −3.1 €/MWh at 15%, 12:00). Effect weakens beyond 30%.
 - **Wind**: Consistent decline up to ~60% share. Smoother and persistent impact across 24h, especially overnight.
-
----
 
 ### Causal Effects (DML - CATE)
 
@@ -35,8 +41,6 @@ This section quantifies the short-run price effects of renewable generation in t
 - **Wind CATE**: Stable impact (−0.8 €/MWh up to 10%, −0.75 €/MWh around 30%). Persists up to 60%.
 
 **Confidence Intervals**: Wider at extreme values due to fewer observations. CATE always below observational mean → mean underestimates true effect.
-
----
 
 ### Key Insight
 
