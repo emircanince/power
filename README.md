@@ -5,31 +5,31 @@
 *Author : Emircan Ince*  
 *Supervisors : Prof. Dr. Stefan Lessmann · Prof. Dr. Jan Mendling*
 
-### Causal Impact of Renewable Penetration
+## Causal Impact of Renewable Penetration
 
 This section quantifies the short-run price effects of renewable generation in the German day-ahead market.
 
-#### Non-parametric mean surfaces (LWPR)
+### Non-parametric mean surfaces (LWPR)
 
 <p align="center">
   <img src="png/solar_2.png" alt="Solar LWPR" width="49%"/>
   <img src="png/wind_2.png" alt="Wind LWPR" width="45%"/>
 </p>
 
-- **Solar**: Steep price drops up to ~25%; strongest around noon (e.g. −3.1 €/MWh at 15%, 12:00).
-- **Wind**: Consistent decline up to ~60% share. Smoother and persistent impact across 24h, especially overnight.
+- **Solar** *(left)*: Steep price drops up to ~25%; strongest around noon (e.g. −3.1 €/MWh at 15%, 12:00).
+- **Wind** *(right)*: Consistent decline up to ~60% share. Smoother and persistent impact across 24h, especially overnight.
 
-#### Causal Heterogeneity (DML)
+### Causal Heterogeneity (DML)
 
 <p align="center">
   <img src="png/mean_vs_cate_solar.png" alt="Solar LWPR" width="45%"/>
   <img src="png/mean_vs_cate_wind.png" alt="Wind LWPR" width="45%"/>
 </p>
 
-- **Solar CATE**: Strong at low shares (−0.95 €/MWh at 5%). Weakens but remains negative beyond 30%.
-- **Wind CATE**: Stable impact (−0.8 €/MWh up to 10%, −0.75 €/MWh around 30%). Persists up to 60%.
+- **Solar CATE** *(left)*: Strong at low shares (−0.95 €/MWh at 5%). Weakens but remains negative beyond 30%.
+- **Wind CATE** *(right)*: Stable impact (−0.8 €/MWh up to 10%, −0.75 €/MWh around 30%). Persists up to 60%.
 
-### Forecasting Results
+## Forecasting Results
 
 Out-of-sample accuracy is evaluated for six models over July–December 2024, across four horizons: 24, 48, 96, and 168 hours.  
 Metrics: Mean Squared Error (MSE) and Mean Absolute Error (MAE).
@@ -43,7 +43,7 @@ Metrics: Mean Squared Error (MSE) and Mean Absolute Error (MAE).
 
 *Best values per horizon are bolded.*
 
-### Working with the Repository
+## Working with the Repository
 
 ### Dependencies
 
