@@ -1,13 +1,13 @@
 # Power Market Modeling
 **Causal Analysis of Renewable Energy Penetration and Electricity Price Forecasting with Transformers**
 
-**Master’s Thesis:** Humboldt-Universität zu Berlin  
-**Author:** Emircan Ince  
-**Supervisors:** Prof. Dr. Stefan Lessmann · Prof. Dr. Jan Mendling
+*Master’s Thesis: Humboldt-Universität zu Berlin*  
+*Author: Emircan Ince*  
+*Supervisors: Prof. Dr. Stefan Lessmann · Prof. Dr. Jan Mendling*  
 
 ## Causal Impact of Renewable Penetration
 
-This section quantifies the short-run price effects of renewable generation in the German day-ahead market by applying causal machine learning techniques.
+This section quantifies the short-run price effects of renewable generation in the German day-ahead market from 2022 to 2024 by applying causal machine learning techniques.
 
 ### Non-parametric mean surfaces (LWPR)
 
