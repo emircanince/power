@@ -1,7 +1,7 @@
 # Power Market Modeling
 **Causal Analysis of Renewable Energy Penetration and Electricity Price Forecasting with Transformers**
 
-*Master’s Thesis · Humboldt-Universität zu Berlin*  
+*Master’s Thesis - Humboldt-Universität zu Berlin*  
 *Author: Emircan Ince*  
 *Supervisors: Prof. Dr. Stefan Lessmann · Prof. Dr. Jan Mendling*  
 
