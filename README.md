@@ -7,7 +7,7 @@
 
 ## Causal Impact of Renewable Penetration
 
-This section quantifies the short-run price effects of renewable generation in the German day-ahead market.
+This section quantifies the short-run price effects of renewable generation in the German day-ahead market by applying causal machine learning techniques.
 
 ### Non-parametric mean surfaces (LWPR)
 
@@ -16,8 +16,8 @@ This section quantifies the short-run price effects of renewable generation in t
   <img src="png/wind_2.png" alt="Wind LWPR" width="45%"/>
 </p>
 
-- **Solar** *(left)*: Steep price drops up to ~25%; strongest around noon (e.g. −3.1 €/MWh at 15%, 12:00).
-- **Wind** *(right)*: Consistent decline up to ~60% share. Smoother and persistent impact across 24h, especially overnight.
+- **Solar***(left)*: Steep price drops up to ~25%; strongest around noon (e.g. −3.1 €/MWh at 15%, 12:00).
+- **Wind***(right)*: Consistent decline up to ~60% share. Smoother and persistent impact across 24h, especially overnight.
 
 ### Causal Heterogeneity (DML)
 
@@ -26,8 +26,8 @@ This section quantifies the short-run price effects of renewable generation in t
   <img src="png/mean_vs_cate_wind.png" alt="Wind LWPR" width="45%"/>
 </p>
 
-- **Solar CATE** *(left)*: Strong at low shares (−0.95 €/MWh at 5%). Weakens but remains negative beyond 30%.
-- **Wind CATE** *(right)*: Stable impact (−0.8 €/MWh up to 10%, −0.75 €/MWh around 30%). Persists up to 60%.
+- **Solar CATE***(left)*: Strong at low shares (−0.95 €/MWh at 5%). Weakens but remains negative beyond 30%.
+- **Wind CATE***(right)*: Stable impact (−0.8 €/MWh up to 10%, −0.75 €/MWh around 30%). Persists up to 60%.
 
 ## Forecasting Results
 
