@@ -1,4 +1,4 @@
-from models.nonlinear_regression_models.utils_mean_solar import *
+from utils_mean_solar import *
 import matplotlib as mpl
 import matplotlib.colors as mcolors
 

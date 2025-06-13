@@ -1,4 +1,4 @@
-from models.nonlinear_regression_models.utils_mean_wind import *
+from utils_mean_wind import *
 import matplotlib as mpl
 import matplotlib.colors as mcolors
 
