@@ -1,14 +1,9 @@
 # Power Market Modeling
 **Causal Analysis of Renewable Energy Penetration and Electricity Price Forecasting with Transformers**
 
-**Master’s Thesis**  
-Humboldt-Universität zu Berlin  
+**Master’s Thesis:** Humboldt-Universität zu Berlin  
 **Author:** Emircan Ince  
 **Supervisors:** Prof. Dr. Stefan Lessmann · Prof. Dr. Jan Mendling
-
-## Summary
-
-This thesis explores electricity market modeling under rising renewable integration by combining causal inference and forecasting with state-of-the-art machine learning. Using data from Germany (2022–2024), it quantifies the causal impact of solar and wind on day-ahead prices and evaluates the forecasting performance of deep learning models. The findings highlight strong price-reducing effects of renewables and showcase the competitiveness of both complex and simple architectures across different horizons.
 
 ## Causal Impact of Renewable Penetration
 
@@ -106,7 +101,7 @@ bash scripts/TimeXer.sh --pred_len 24    # options: 24 / 48 / 96 / 168
 
 The script handles data loading, training, checkpoints, and TensorBoard logging automatically.
 
-Models: TimeXer, iTransformer, PatchTST, DLinear, SCINet, Autoformer
+**Models:** TimeXer, iTransformer, PatchTST, DLinear, SCINet, Autoformer
 
 *Change `TimeXer.sh` to the corresponding script (e.g., `iTransformer.sh`) to run a different model.*
 
