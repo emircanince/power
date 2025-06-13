@@ -2,7 +2,7 @@
 **Causal Analysis of Renewable Energy Penetration and Electricity Price Forecasting with Transformers**
 
 *Master’s Thesis – Humboldt-Universität zu Berlin*  
-*Author : Emircan Ince*  
+*Author : Emircan Ince*
 *Supervisors : Prof. Dr. Stefan Lessmann · Prof. Dr. Jan Mendling*
 
 ## Causal Impact of Renewable Penetration
@@ -94,16 +94,15 @@ Outputs are written to CSV and saved as figures in the `png/` directory.
 To train and evaluate **TimeXer** and the benchmark models:
 
 ```bash
-chmod +x scripts/TimeXer.sh      # run once
+chmod +x scripts/TimeXer.sh              # run once
 bash scripts/TimeXer.sh --pred_len 24    # options: 24 / 48 / 96 / 168
 ```
 
 The script handles data loading, training, checkpoints, and TensorBoard logging automatically.
 
-Models: TimeXer, iTransformer, PatchTST, FEDformer, DLinear, TimesNet
-*Change `TimeXer.sh` to the corresponding script (e.g., `iTransformer.sh`) to run a different model.*
+Models: TimeXer, iTransformer, PatchTST, DLinear, SCINet, Autoformer
 
-## Project Structure
+*Change `TimeXer.sh` to the corresponding script (e.g., `iTransformer.sh`) to run a different model.*
 
 ## Project Structure
 
