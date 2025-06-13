@@ -1,15 +1,15 @@
 # Power Market Modeling
 **Causal Analysis of Renewable Energy Penetration and Electricity Price Forecasting with Transformers**
 
-*Master’s Thesis: Humboldt-Universität zu Berlin*  
+*Master’s Thesis · Humboldt-Universität zu Berlin*  
 *Author: Emircan Ince*  
 *Supervisors: Prof. Dr. Stefan Lessmann · Prof. Dr. Jan Mendling*  
 
 ## Causal Impact of Renewable Penetration
 
-This section quantifies the short-run price effects of renewable generation in the German day-ahead market from 2022 to 2024 by applying causal machine learning techniques.
+This section quantifies the short-run price effects of renewable generation in the German day-ahead market from January 2022 to December 2024 by applying causal machine learning techniques.
 
-### Non-parametric mean surfaces (LWPR)
+### Non-Parametric Mean Surfaces (LWPR)
 
 <p align="center">
   <img src="png/solar_2.png" alt="Solar LWPR" width="49%"/>
@@ -110,7 +110,7 @@ The script handles data loading, training, checkpoints, and TensorBoard logging 
 ```text
 .
 ├── checkpoints/                      # Model checkpoints
-├── data/                             # Raw input data (thesis_data.csv)
+├── data/                             # Preprocessed dataset (thesis_data.csv)
 ├── data_provider/                    # Data loading and preprocessing logic
 ├── exp/                              # Experiment configurations
 ├── layers/                           # Custom neural network layers
@@ -131,7 +131,7 @@ The script handles data loading, training, checkpoints, and TensorBoard logging 
 ├── utils/                            # Utility functions and helpers
 │
 ├── .gitignore                        # Git exclusion rules
-├── README.md                         # **← You are here**
+├── README.md                         # ← You are here
 ├── requirements.txt                  # Dependency specification
 └── run.py                            # Main script to launch workflows
 ```
