@@ -17,7 +17,7 @@ This section quantifies the short-run price effects of renewable generation in t
 </p>
 
 - **Solar** *(left)*: Steep price drops up to ~25%; strongest around noon (e.g. −3.1 €/MWh at 15%, 12:00).
-- **Wind** *(right)*: Consistent decline up to ~60% share. Smoother and persistent impact across 24h, especially overnight.
+- **Wind** *(right)*: Consistent decline up to ~60% share. Smoother and persistent across 24h, especially overnight.
 
 ### Causal Heterogeneity (DML)
 
