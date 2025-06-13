@@ -34,8 +34,8 @@ This section quantifies the short-run price effects of renewable generation in t
 The forecasting section benchmarks six models, including both deep learning architectures and linear baselines across multiple prediction horizons, focusing on accuracy and stability under a unified experimental protocol.
 
 |Horizon| TimeXer       | iTransformer | PatchTST     | DLinear       | SCINet        | Autoformer    |
-|-------|---------------|--------------|--------------|---------------|---------------|---------------|
-|       |   MSE / MAE   |  MSE / MAE   |  MSE / MAE   |  MSE / MAE    |  MSE / MAE    | MSE / MAE     |
+|-------|---------------|--------------|--------------|---------------|---------------|----------------|
+|       | MSE / MAE     | MSE / MAE    | MSE / MAE    | MSE / MAE     | MSE / MAE     | MSE / MAE      |
 | 24h   | **0.208 / 0.114** | 0.302 / 0.212 | 0.380 / 0.288 | 0.209 / 0.118 | 0.210 / 0.117 | 0.261 / 0.153 |
 | 48h   | 0.243 / 0.152 | 0.303 / 0.217 | 0.360 / 0.269 | **0.234 / 0.147** | 0.247 / 0.154 | 0.268 / 0.175 |
 | 96h   | 0.274 / 0.187 | 0.318 / 0.236 | 0.330 / 0.251 | **0.254 / 0.172** | 0.288 / 0.205 | 0.280 / 0.191 |
