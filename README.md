@@ -1,9 +1,14 @@
 # Power Market Modeling
 **Causal Analysis of Renewable Energy Penetration and Electricity Price Forecasting with Transformers**
 
-*Master’s Thesis – Humboldt-Universität zu Berlin*  
-*Author : Emircan Ince*
-*Supervisors : Prof. Dr. Stefan Lessmann · Prof. Dr. Jan Mendling*
+**Master’s Thesis**  
+Humboldt-Universität zu Berlin  
+**Author:** Emircan Ince  
+**Supervisors:** Prof. Dr. Stefan Lessmann · Prof. Dr. Jan Mendling
+
+## Summary
+
+This thesis explores electricity market modeling under rising renewable integration by combining causal inference and forecasting with state-of-the-art machine learning. Using data from Germany (2022–2024), it quantifies the causal impact of solar and wind on day-ahead prices and evaluates the forecasting performance of deep learning models. The findings highlight strong price-reducing effects of renewables and showcase the competitiveness of both complex and simple architectures across different horizons.
 
 ## Causal Impact of Renewable Penetration
 
@@ -46,6 +51,8 @@ The forecasting section benchmarks six models, including both deep learning arch
 
 *Best values per horizon are bolded.*
 
+TimeXer performs best at the 24-hour horizon, while DLinear takes the lead from 48 hours onward, reflecting a trade-off between complexity and generalization.
+
 ## Working with the Repository
 
 ### Dependencies
@@ -68,7 +75,6 @@ cd power
 # Create and activate a virtual environment
 python -m venv venv
 source venv/bin/activate      # for macOS/Linux
-# On Windows use: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
@@ -132,5 +138,5 @@ Models: TimeXer, iTransformer, PatchTST, DLinear, SCINet, Autoformer
 ├── .gitignore                        # Git exclusion rules
 ├── README.md                         # **← You are here**
 ├── requirements.txt                  # Dependency specification
-├── run.py                            # Main script to launch workflows
+└── run.py                            # Main script to launch workflows
 ```
