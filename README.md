@@ -2,8 +2,8 @@
 **Causal Analysis of Renewable Energy Penetration and Electricity Price Forecasting with Transformers**
 
 Master’s Thesis - Humboldt-Universität zu Berlin  
-Author: Emircan Ince  
-Supervisors: Prof. Dr. Stefan Lessmann · Prof. Dr. Jan Mendling  
+**Author:** Emircan Ince  
+**Supervisors:** Prof. Dr. Stefan Lessmann · Prof. Dr. Jan Mendling  
 
 *The full text for this work is available here.*
 
@@ -134,6 +134,8 @@ The script handles data loading, training, checkpoints, and TensorBoard logging 
 ├── requirements.txt                  # Dependency specification
 └── run.py                            # Main script to launch workflows
 ```
+
+**Keywords:** Causal Machine Learning, Deep Learning, Time Series Modeling, Renewable Energy, Electricity Price Forecasting
 
 ## References
 
