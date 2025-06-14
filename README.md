@@ -5,6 +5,10 @@
 *Author: Emircan Ince*  
 *Supervisors: Prof. Dr. Stefan Lessmann · Prof. Dr. Jan Mendling*  
 
+**Keywords:** Causal Machine Learning, Deep Learning, Time Series Modeling, Renewable Energy, Electricity Price Forecasting
+
+**Full Text:** The full text for this work is available here.
+
 ## Causal Impact of Renewable Penetration
 
 This section quantifies the short-run price effects of renewable generation in the German day-ahead market from January 2022 to December 2024 by applying causal machine learning techniques.
@@ -134,3 +138,9 @@ The script handles data loading, training, checkpoints, and TensorBoard logging 
 ├── requirements.txt                  # Dependency specification
 └── run.py                            # Main script to launch workflows
 ```
+
+## References
+
+[^1]: [Market Impact of Renewables](https://github.com/dcacciarelli/market-impact-renewables)
+[^2]: [TimeXer](https://github.com/thuml/TimeXer)
+[^3]: [ENTSO-E Transparency Platform](https://transparency.entsoe.eu/)
