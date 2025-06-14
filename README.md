@@ -5,8 +5,6 @@
 *Author: Emircan Ince*  
 *Supervisors: Prof. Dr. Stefan Lessmann · Prof. Dr. Jan Mendling*  
 
-**Keywords:** Causal Machine Learning, Deep Learning, Time Series Modeling, Renewable Energy, Electricity Price Forecasting
-
 **Full Text:** The full text for this work is available here.
 
 ## Causal Impact of Renewable Penetration
@@ -122,7 +120,6 @@ The script handles data loading, training, checkpoints, and TensorBoard logging 
 │   ├── nonlinear_regression_models/  # LWPR models
 │   ├── Autoformer.py
 │   ├── DLinear.py
-│   ├── Informer.py
 │   ├── PatchTST.py
 │   ├── SCINet.py
 │   ├── TimeXer.py
@@ -132,7 +129,6 @@ The script handles data loading, training, checkpoints, and TensorBoard logging 
 ├── scripts/                          # Shell scripts for model training/evaluation
 ├── test_results/                     # Test logs
 ├── utils/                            # Utility functions and helpers
-│
 ├── .gitignore                        # Git exclusion rules
 ├── README.md                         # ← You are here
 ├── requirements.txt                  # Dependency specification
