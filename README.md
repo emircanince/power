@@ -58,7 +58,7 @@ Developed with:
 
 - **Python 3.9**
 - **PyTorch 2.0**
-- **LightGBM 4.3**
+- **LightGBM 4.6**
 
 All dependencies are listed and pinned in `requirements.txt`.
 
