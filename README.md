@@ -141,6 +141,6 @@ The script handles data loading, training, checkpoints, and TensorBoard logging 
 
 ## References
 
-[^1]: [Market Impact of Renewables](https://github.com/dcacciarelli/market-impact-renewables)
-[^2]: [TimeXer](https://github.com/thuml/TimeXer)
-[^3]: [ENTSO-E Transparency Platform](https://transparency.entsoe.eu/)
+- [Market Impact of Renewables](https://github.com/dcacciarelli/market-impact-renewables)
+- [TimeXer](https://github.com/thuml/TimeXer)
+- [ENTSO-E Transparency Platform](https://transparency.entsoe.eu/)
