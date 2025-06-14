@@ -95,8 +95,7 @@ Outputs are written to CSV and saved as figures in the `png/` directory.
 To train and evaluate **TimeXer** and the benchmark models:
 
 ```bash
-chmod +x scripts/TimeXer.sh              # run once
-bash scripts/TimeXer.sh --pred_len 24    # options: 24 / 48 / 96 / 168
+bash scripts/TimeXer.sh       # optional: add --pred_len 48 / 96 / 168 (default: 24)
 ```
 
 The script handles data loading, training, checkpoints, and TensorBoard logging automatically.
